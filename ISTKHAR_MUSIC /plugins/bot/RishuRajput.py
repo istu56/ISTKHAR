@@ -38,7 +38,7 @@ InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="settings_back_helper")
 # =====================================================
 # OPEN 9 BUTTON MENU (FROM SETTINGS)
 # =====================================================
-@app.on_callback_query(filters.regex("^9bottonnn$") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("^rajputRishu9bottonnn$") & ~BANNED_USERS)
 @LanguageStart
 async def open_nine_menu(client, callback_query: CallbackQuery, _):
     await callback_query.edit_message_text(
