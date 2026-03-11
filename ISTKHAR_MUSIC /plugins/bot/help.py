@@ -9,7 +9,6 @@ from ISTKHAR_MUSIC.utils.decorators.language import LanguageStart, languageCB
 from ISTKHAR_MUSIC.utils.inline.help import help_back_markup, private_help_panel, oyeISTKHAR_markup
 from config import BANNED_USERS, SUPPORT_CHAT
 from strings import get_string, helpers
-from ISTKHAR_MUSIC.utils.decorators.language import LanguageStart
 
 
 ISTKHAR_PIC = [
@@ -62,25 +61,6 @@ async def helper_private(client: app, update: Union[types.Message, types.Callbac
         )
 
 
-@app.on_callback_query(filters.regex("settingsback_helper") & ~BANNED_USERS)
-@languageCB
-async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
-    try:
-        await CallbackQuery.answer()
-    except:
-        pass
-    if CallbackQuery.message.chat.type == ChatType.PRIVATE:
-        await app.resolve_peer(OWNER_ID)
-        buttons = private_panel(_)
-        return await CallbackQuery.edit_message_text(
-            _["start_2"].format(CallbackQuery.from_user.mention, app.mention),
-            reply_markup=InlineKeyboardMarkup(buttons),
-        )
-    else:
-        buttons = setting_markup(_)
-        return await CallbackQuery.edit_message_reply_markup(
-            reply_markup=InlineKeyboardMarkup(buttons)
-        )
 
 
 
