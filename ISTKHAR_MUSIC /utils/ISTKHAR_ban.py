@@ -1,4 +1,4 @@
- from pyrogram import filters
+from pyrogram import filters
 from ISTKHAR_MUSIC.utils.admin_check import admin_check
 
 
