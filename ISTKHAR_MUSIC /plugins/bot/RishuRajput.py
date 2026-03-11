@@ -1,8 +1,8 @@
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 
-from  import app
-from utils.decorators.language import LanguageStart
+from ISTKHAR_MUSIC import app
+from ISTKHAR_MUSIC.utils.decorators.language import LanguageStart
 from config import BANNED_USERS
 
 
