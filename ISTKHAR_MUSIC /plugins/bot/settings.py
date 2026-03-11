@@ -6,6 +6,11 @@ from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
+
+
+from ISTKHAR_MUSIC.utils.inline import setting_markup
+from config import OWNER_ID
+
 import config
 from ISTKHAR_MUSIC import app
 from ISTKHAR_MUSIC.misc import _boot_
@@ -110,7 +115,7 @@ async def start_pm(client, message: Message, _):
 
 
 @app.on_callback_query(filters.regex("settingsback_helper") & ~BANNED_USERS)
-@languageCB
+@LanguageStart
 async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
     try:
         await CallbackQuery.answer()
